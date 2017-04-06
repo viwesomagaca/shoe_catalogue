@@ -1,0 +1,86 @@
+body{
+	background-image: url(dirtyAllstar.jpg);
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	align-content: center;
+}
+#heading, #brands{
+	background-color: cadetblue;
+	margin-left: 150px;
+	margin-right: 150px;
+	border-radius: 10px;
+	
+	
+}
+#brands{
+	background-color: cadetblue;
+	margin-left: 150px;
+	margin-right: 150px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+ #addStock{
+    background-color: cadetblue;
+	margin-left: 150px;
+	margin-right: 150px;
+	border-radius: 10px;
+	text-align: center;
+   
+}
+#display{
+     background-color: cadetblue;
+    font-size: 20px;
+    margin-left: 150px;
+	margin-right: 150px;
+	border-radius: 10px;
+    align-content:center;  
+}
+
+table, th,td, tr{
+    border: solid black 2px;
+    border-collapse: collapse;
+}
+p{
+    color: white;
+}
+
+h1{
+font-size: 50px;
+	align-content: center;
+	text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: #2b2b2b;
+    text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+    
+}
+
+#h1{
+	position: relative;
+	bottom: -20px;
+}
+label{
+	font-size: 20px;
+	font-family: "Jim Nightshade",cursive;
+	color: white;
+}
+input, #searchbtn{
+	height: 35px;
+	width: 120px;
+	font-size: 16px;
+}
+
+#searchbtn{
+	height: 35px;
+	width: 120px;
+	font-size: 16px;
+	font-style: italic;
+	border-radius: 2px;
+}
+#addStock{
+	background-color: cadetblue;
+	position: relative;
+	border-radius: 50px;
+}
+
