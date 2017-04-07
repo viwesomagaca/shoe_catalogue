@@ -7,46 +7,68 @@ function search() {
     'use strict';
     var availableStock, template, searched, stock, stock1;
     
-    
     function brands(input) {
         return searchbrands.value == input.brand;
     }
-    if (searchbrands !== "") {
-    stock = shoes.filter(brands);
-   }
+     
     
-    
-    function colour(input) {
+     function colour(input) {
         return colors.value == input.color;
     }
-    
- if (colors !== "") {
-        if (searchbrands !== "") {
-            stock = stock.filter(colour);
-        } else {
-            stock = shoes.filter(colour);
-        }
-    
     function brandsizes(input) {
         return sizes.value == input.size;
     }
     
-        if (sizes !== "") {
-            if(searchbrands !== "" || colors !== "") {
-            stock = stock.filter(brandsizes);
+    if(searchbrands.value == ""){
+        alert('Please Choose a Brand first!');
+    }
+
+    if (searchbrands.value !== "") {
+        var stock = shoes.filter(brands);
+    }
+    
+   if (colors.value !== "") {
+     if (searchbrands.value !== "" ) {
+            var stock = stock.filter(colour);
         } else {
-            stock = shoes.filter(brandsizes);
+            var stock = shoes.filter(brands);
+        }  
+    }
+    if (sizes.value !== "")  {
+        if (searchbrands.value !== "" || colors.value !== "") {
+            var stock = stock.filter(brandsizes);
+        } else {
+            var stock = shoes.filter(brands);
         }
     } 
+    
+   
 
-}
-        availableStock = document.getElementById('shoesCat');
-        template = Handlebars.compile(availableStock.innerHTML);
-        searched = template({
-            stock 
+    
+    
+    availableStock = document.getElementById('shoesCat');
+    template = Handlebars.compile(availableStock.innerHTML);
+    searched = template({
+        stock
                 });
           document.getElementById("display").innerHTML = searched;
+    
 }
+
+function addStock(){
+    var addBrand = document.getElementById("brandAdd");
+    var addColor = document.getElementById("colorAdd");
+    var addQuantity = document.getElementById("quanityAdd");
+    var addSize = document.getElementById("sizeAdd");
+    
+    var MoreStock ={}
+    
+     function createS (){
+         
+     }
+}
+
+
 var shoes = [
     {brand: "Nike", color : "Red", quantity: 100, price : 850, size: 1},
     {brand: "Nike", color : "Red", quantity: 1500, price : 850, size: 2},
@@ -214,3 +236,4 @@ var shoes = [
     {brand: "Converse", color: "Red", quantity : 300, price : 650, size: 10}
     
     ]
+
