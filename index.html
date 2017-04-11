@@ -22,12 +22,22 @@
 			</datalist> 
 		
 		<label> Color :</label>
+		
+		
+		
+		
 		<input list="colors" placeholder="select:" id="c">	
+		
+		
+		
 		<datalist id="colors">
 			<option id="black" value="Black" class="color"></option>
 			<option id="white" value="White" class="color"></option>
 			<option id="red" value="Red" class="color"></option>
 		</datalist>
+		
+		
+		
 		<label>Sizes :</label>
 		<input list="sizes" placeholder="select:" id="s" >	
 		<datalist id="sizes">
@@ -62,9 +72,12 @@
 				 <label>Size:</label>
 				 <input id="sizeAdd" placeholder="Enter Size">
 				 
+				  <label>Price:</label>
+				 <input id="priceAdd" placeholder="Enter Price">
+				 
 				 <label>Quantity:</label>
 				 <input id="quantityAdd" placeholder="Enter Quantity"> 
-				 <input id="enterstock" type="button" value="Add Stock" onclick="addStock()">
+				 <input id="enterstock" type="button" value="Add Stock" onclick="addingStock()">
 			 </div>
     
 <script id="shoesCat" type="text/x-handlebars-template">
@@ -81,7 +94,7 @@
     <tr>
     <td>{{brand}}</td>
     <td>{{color}}</td>
-    <td>R{{price}}</td>
+    <td>R {{price}}</td>
     <td>{{quantity}}</td>
     <td>{{size}}</td>
     </tr>

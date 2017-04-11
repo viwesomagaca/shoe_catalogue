@@ -18,10 +18,6 @@ function search() {
     function brandsizes(input) {
         return sizes.value == input.size;
     }
-    
-    if(searchbrands.value == ""){
-        alert('Please Choose a Brand first!');
-    }
 
     if (searchbrands.value !== "") {
         var stock = shoes.filter(brands);
@@ -31,19 +27,16 @@ function search() {
      if (searchbrands.value !== "" ) {
             var stock = stock.filter(colour);
         } else {
-            var stock = shoes.filter(brands);
+            var stock = shoes.filter(colour);
         }  
     }
     if (sizes.value !== "")  {
         if (searchbrands.value !== "" || colors.value !== "") {
             var stock = stock.filter(brandsizes);
         } else {
-            var stock = shoes.filter(brands);
+            var stock = shoes.filter(brandsizes);
         }
     } 
-    
-   
-
     
     
     availableStock = document.getElementById('shoesCat');
@@ -55,19 +48,29 @@ function search() {
     
 }
 
-function addStock(){
+function addingStock(){
     var addBrand = document.getElementById("brandAdd");
     var addColor = document.getElementById("colorAdd");
-    var addQuantity = document.getElementById("quanityAdd");
-    var addSize = document.getElementById("sizeAdd");
+    var addQuantity = parseInt(document.getElementById("quantityAdd").value);
+	var addPrice = parseInt(document.getElementById("priceAdd").value);
+    var addSize = parseInt(document.getElementById("sizeAdd").value);
     
-    var MoreStock ={}
-    
-     function createS (){
-         
+    var moreStock ={}
+
+		createProperty("brand", addBrand.value);
+		createProperty("color", addColor.value);
+		createProperty("quantity", addQuantity);
+		createProperty("price", addPrice);
+		createProperty("addSize", addSize);
+	
+     function createProperty(propertyName,PropertyValue){
+        moreStock[propertyName] = PropertyValue;
      }
+		shoes.push(moreStock);
+     
 }
 
+ //shoes = MoreSTock
 
 var shoes = [
     {brand: "Nike", color : "Red", quantity: 100, price : 850, size: 1},
@@ -236,4 +239,5 @@ var shoes = [
     {brand: "Converse", color: "Red", quantity : 300, price : 650, size: 10}
     
     ]
+
 
