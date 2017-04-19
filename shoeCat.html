@@ -1,0 +1,102 @@
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Jim+Nightshade|Griffy|Kaushan+Script" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="shoeCat.css">
+<script src="handlebars-v4.0.5.js"></script>
+<title> shoe catalogue</title>
+</head>
+<body align="center">
+<div id="dropdowns" align="center">
+    <h1>...Somagie's Sneaker Shopping ...***</h1>
+    <img src="jordan-jumpman-team-cool-grey-2017.jpg">
+    <h3>Repeat after me... Shoes are boring, i need a new pair of sneakers!!! </h3>
+    </div>
+<script class="dropdown" type="text/x-handlebars-template">
+
+    
+<select>
+    <option value="" disabled selected>Select Your Option </option>
+    {{#each brand}}
+<option>{{this}} </option>
+    {{/each}}
+</select>
+
+<select>
+    {{#each color}}
+<option>{{this}}</option>
+    {{/each}}
+</select>
+
+
+<select>
+    {{#each size}}
+<option> {{this}} </option>
+    {{/each}}
+</select>
+
+</script>
+
+<script id="shoesCat" type="text/x-handlebars-template">
+<h1>Stock Available</h1>
+<table style="width:80%" id="s" align="center">
+    <tr>
+    <th> Brand Name</th>
+    <th> color </th>
+    <th>price</th>
+    <th> In Stock </th>
+        <th>Size </th>
+        </tr>
+    {{#each stock}}
+    <tr>
+    <td>{{brand}}</td>
+    <td>{{color}}</td>
+    <td>R {{price}}</td>
+    <td>{{quantity}}</td>
+    <td>{{size}}</td>
+    </tr>
+    {{/each}}
+ </table>
+     
+</script>
+<div class="dropDisplay">
+    <select class="brands"></select>
+    <select class="colors"></select>
+    <select class="sizes"></select><br>
+    
+    
+    <input type="button" id="searchbtn" value ="search" onclick="search()">
+    <input type="button" id="all" value="Add Stock" onclick="showAll()">
+    </div>
+    
+    <div id="display"></div>
+    <hr>
+    
+<div id="addStock" style="display:none">
+ <h1 id ="h1"> Adding More Stock</h1>
+ 
+ <label>Brand Name :</label>
+ <input id="brandAdd" placeholder="Enter brand Name">
+ 
+ <label>Color :</label>
+ <input id="colorAdd" placeholder="Enter Brand Color">
+ 
+ <label>Size:</label>
+ <input id="sizeAdd" placeholder="Enter Brand Size">
+ 
+  <label>Price:</label>
+ <input id="priceAdd" placeholder="Enter Brand Price">
+ 
+ <label>Quantity:</label>
+   
+ <input id="quantityAdd" placeholder="Enter BrandQuantity">
+	
+	<br>
+     <div id="error"></div>
+	<br>
+ <input id="enterstock" type="button" value="Add Stock" onclick="addingStock()">
+			 </div>
+    
+</body>
+<script type="text/javascript" src="shoecat.js"></script>
+
+</html>
