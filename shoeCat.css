@@ -59,7 +59,9 @@ img{
     position: relative;
     bottom: 40px;
 }
-
+#brandAdd, #colorAdd{
+	text-transform: capitalize;
+}
 label, input{
     float: left;
     position: relative;
