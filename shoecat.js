@@ -336,3 +336,4 @@ document.getElementById("addStock").style.display ="block"
 }
 
 
+
